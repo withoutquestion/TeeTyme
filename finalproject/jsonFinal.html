@@ -1,0 +1,31 @@
+<html>
+<head>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$.get("clubs.json",function(json){
+			$.each(json['clubs'], function(i,per){
+				$("#body").append('<tr><td>' + per.name + '</td><td>' + per.price +  '</td></tr>' );
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<table id="body">
+		<tr>
+		<th>Club</th>
+		<th>Price</th>
+		</tr>
+	</table>
+	<div class='things' style='display:inline'>
+                            <a class='btn btn-primary' onclick="location.href='/~tjpeltie/cis355/finalproject/teerounds/ObjectCRUD/index.html'";>Rounds</a>
+							<a class='btn btn-primary' onclick="location.href='/~tjpeltie/cis355/finalproject/teepersons/ObjectCRUD/index.html'";>Persons</a>
+							<a class='btn btn-primary' onclick="location.href='/~tjpeltie/cis355/finalproject/teecourses/ObjectCRUD/index.html'";>Courses</a>
+							<a class='btn btn-primary' onclick="location.href='~/tjpeltie/cis355/finalproject/fileUpload.html";>Upload File</a>
+							<a class='btn btn-primary' onclick="location.href='/~tjpeltie/cis355/finalproject/jsonFinal.html'";>Clubs</a>
+							<a class='btn btn-primary' onclick="location.href='/~tjpeltie/cis355/finalproject/ProjectWriteUp.html'";>Write-Up</a>
+						</div>
+</body>
+</html>

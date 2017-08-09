@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $( document ).ready(function() { 
+            personsRequest("displayList");
+        });
+        
+        // Submit a request to the persons table.
+        function personsRequest(action, id) {
+            $.post(
+                "index.php",
+                "table="   + "tt_rounds"          +
+                "&action=" + action             +
+                "&id="     + id                 +
+                "&person_id="   + $("#person_id").val()   +
+				"&course_id="   + $("#course_id").val()   +
+                "&teetime="  + $("#teetime").val()  +
+				"&teedate="   + $("#teedate").val()   +
+				"&par01="   + $("#par01").val()   +
+				"&par02="   + $("#par02").val()   +
+				"&par03="   + $("#par03").val()   +
+				"&par04="   + $("#par04").val()   +
+				"&par05="   + $("#par05").val()   +
+				"&par06="   + $("#par06").val()   +
+				"&par07="   + $("#par07").val()   +
+				"&par08="   + $("#par08").val()   +
+				"&par09="   + $("#par09").val()   +
+				"&par10="   + $("#par10").val()   +
+				"&par11="   + $("#par11").val()   +
+				"&par12="   + $("#par12").val()   +
+				"&par13="   + $("#par13").val()   +
+				"&par14="   + $("#par14").val()   +
+				"&par15="   + $("#par15").val()   +
+				"&par16="   + $("#par16").val()   +
+				"&par17="   + $("#par17").val()   +
+				"&par18="   + $("#par18").val()
+            ).done(function( msg ) { 
+                $("#content").html( msg );
+            });
+        }
+    </script>
+    <style>
+        .btn {
+            width: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
